@@ -1,9 +1,6 @@
 package com.ycr.rest;
  
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
  
 @Path("/getservice")
@@ -35,6 +32,14 @@ public class GETService {
 	public Response resetRequestCount(){
 		requestCounter =0;
 		return Response.status(200).entity("{\"Request Count is Set to \" : " +String.valueOf(requestCounter)+ "}").build();
+
+	}
+
+	@POST
+	@Produces("application/json")
+	@Path("/dummypost")
+	public Response dummyPost(){
+		return Response.status(200).entity("{\"Request Status\" : \"Sucess\"}").build();
 
 	}
 }
