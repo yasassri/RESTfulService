@@ -39,6 +39,7 @@ public class GETService {
 	@Produces("application/json")
 	@Path("/dummypost")
 	public Response dummyPost(){
+		requestCounter++;
 		return Response.status(200).entity("{\"Request Status\" : \"Sucess\"}").build();
 
 	}
