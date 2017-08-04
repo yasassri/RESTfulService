@@ -1,4 +1,4 @@
-package com.ycr.rest;
+package com.mock.rest;
  
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
