@@ -10,31 +10,25 @@ import javax.ws.rs.core.Response;
 
 @Path("/service") public class GenericService {
 
-    static int requestCounter = 0;
-
     @GET @Path("/get") public Response getMsg() {
-
         String output = "Get Request Received";
         return Response.status(200).entity(output).build();
 
     }
 
     @HEAD @Path("/head") public Response headMsg() {
-
         String output = "Get Request Received";
         return Response.status(200).entity(output).header("custom", "head request received").build();
 
     }
 
     @POST @Produces("application/json") @Path("/post") public Response postMsg() {
-        requestCounter++;
-        return Response.status(200).entity("{\" POST Method : Request Status\" : \"Sucess\"}").build();
+        return Response.status(200).entity("{\"POST Method:Request Status\":\"Sucess\"}").build();
 
     }
 
     @PUT @Produces("application/json") @Path("/put") public Response putMsg() {
-        requestCounter++;
-        return Response.status(200).entity("{\" PUT Method : Request Status\" : \"Sucess\"}").build();
+        return Response.status(200).entity("{\"PUT Method:Request Status\":\"Sucess\"}").build();
 
     }
 }
